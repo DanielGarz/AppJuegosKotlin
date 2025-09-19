@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SudokuActivity">
+
+    <TextView
+        android:id="@+id/textViewSudokuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sudoku Game"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridLayoutSudoku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:columnCount="9"
+        android:rowCount="9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSudokuTitle"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="96dp">
+
+        <!-- 81 EditTexts or custom views for the Sudoku grid will go here -->
+        <!-- Example of one cell (you'''d repeat this 80 more times, customizing IDs) -->
+        <EditText
+            android:id="@+id/cell_0_0"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@android:drawable/editbox_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            tools:text="1"/>
+        <!-- Add 80 more cells ... -->
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/buttonNewGameSudoku"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="New Game"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCheckSudoku"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutSudoku" />
+
+    <Button
+        android:id="@+id/buttonCheckSudoku"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNewGameSudoku"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonNewGameSudoku" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
