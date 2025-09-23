@@ -6,9 +6,9 @@
 **Plataforma:** Android  
 **Idioma:** Español  
 **Equipo de Desarrollo:** Daniel Garza & Misael Martinez  
-**Institución Académica:** [Universidad/Instituto]  
+**Institución Académica:** Universidad Tecmilenio  
 **Materia:** Desarrollo de Aplicaciones Móviles  
-**Período Académico:** 2024  
+**Período Académico:** 2025  
 
 ---
 
