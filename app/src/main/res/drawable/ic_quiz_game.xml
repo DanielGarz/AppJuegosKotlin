@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Brain outline -->
+    <group>
+        <path
+            android:pathData="M18,12 Q16,10 14,12 Q12,14 12,18 Q10,20 10,24 Q10,28 12,30 Q14,34 18,36 Q22,38 26,38 Q30,38 34,36 Q38,34 40,30 Q42,28 42,24 Q42,20 40,18 Q40,14 38,12 Q36,10 34,12 Q32,10 30,10 Q26,8 22,8 Q20,8 18,12 Z"
+            android:strokeColor="#D91B24"
+            android:strokeWidth="2"
+            android:fillColor="#FFFFFF" />
+    </group>
+
+    <!-- Brain details -->
+    <group>
+        <path
+            android:pathData="M16,16 Q18,14 20,16 Q22,18 20,20 Q18,22 16,20"
+            android:strokeColor="#761F21"
+            android:strokeWidth="1.5"
+            android:fillColor="#00000000" />
+        <path
+            android:pathData="M28,14 Q30,12 32,14 Q34,16 32,18 Q30,20 28,18"
+            android:strokeColor="#761F21"
+            android:strokeWidth="1.5"
+            android:fillColor="#00000000" />
+        <path
+            android:pathData="M22,24 Q24,22 26,24 Q28,26 26,28 Q24,30 22,28"
+            android:strokeColor="#761F21"
+            android:strokeWidth="1.5"
+            android:fillColor="#00000000" />
+    </group>
+
+    <!-- Question mark -->
+    <group>
+        <path
+            android:pathData="M22,38 A2,2 0,1,1 22,42 A2,2 0,1,1 22,38 Z"
+            android:fillColor="#504141" />
+        <path
+            android:pathData="M22,36 Q22,34 24,34 Q26,34 26,36 Q26,38 24,38 L24,40 M24,42 L24,44"
+            android:strokeColor="#504141"
+            android:strokeWidth="2"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000" />
+    </group>
+
+    <!-- Lightbulb effect -->
+    <group>
+        <path
+            android:pathData="M38,8 L39,10 L38,12 L37,10 Z M36,10 L38,10"
+            android:strokeColor="#504141"
+            android:strokeWidth="1"
+            android:fillColor="#504141" />
+    </group>
+</vector>

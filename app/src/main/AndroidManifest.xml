@@ -22,6 +22,8 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".TicTacToeActivity" />
         <activity android:name=".SudokuActivity" />
+        <activity android:name=".MemoryGameActivity" />
+        <activity android:name=".QuizGameActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

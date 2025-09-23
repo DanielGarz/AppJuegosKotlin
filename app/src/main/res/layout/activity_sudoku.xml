@@ -4,70 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp"
     tools:context=".SudokuActivity">
 
     <TextView
         android:id="@+id/textViewSudokuTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Sudoku Game"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_marginTop="16dp"
+        android:text="@string/sudoku_title"
+        style="@style/TextAppearance.App.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <GridLayout
-        android:id="@+id/gridLayoutSudoku"
+    <TextView
+        android:id="@+id/textViewDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:columnCount="9"
-        android:rowCount="9"
+        android:layout_marginTop="8dp"
+        android:text="@string/difficulty_medium"
+        style="@style/TextAppearance.App.Body"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSudokuTitle"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="96dp">
+        app:layout_constraintTop_toBottomOf="@+id/textViewSudokuTitle" />
 
-        <!-- 81 EditTexts or custom views for the Sudoku grid will go here -->
-        <!-- Example of one cell (you'''d repeat this 80 more times, customizing IDs) -->
-        <EditText
-            android:id="@+id/cell_0_0"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="1dp"
-            android:background="@android:drawable/editbox_background"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDifficulty"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <GridLayout
+            android:id="@+id/gridLayoutSudoku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="9"
+            android:rowCount="9"
+            android:background="@color/dark_gray"
+            android:padding="4dp">
+
+            <!-- Grid will be populated programmatically -->
+
+        </GridLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Primera fila con botones principales -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            tools:text="1"/>
-        <!-- Add 80 more cells ... -->
+            android:layout_marginBottom="8dp">
 
-    </GridLayout>
+            <Button
+                android:id="@+id/buttonNewGameSudoku"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/new_game"
+                android:backgroundTint="@color/primary_red" />
 
-    <Button
-        android:id="@+id/buttonNewGameSudoku"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="New Game"
-        app:layout_constraintEnd_toStartOf="@+id/buttonCheckSudoku"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayoutSudoku" />
+            <Button
+                android:id="@+id/buttonCheckSudoku"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/check"
+                android:strokeColor="@color/primary_red"
+                android:textColor="@color/primary_red" />
 
-    <Button
-        android:id="@+id/buttonCheckSudoku"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNewGameSudoku"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonNewGameSudoku" />
+        </LinearLayout>
+
+        <!-- Segunda fila con pista y volver -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonHintSudoku"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Pista"
+                android:strokeColor="@color/dark_red"
+                android:textColor="@color/dark_red" />
+
+            <Button
+                android:id="@+id/buttonBackToMenuSudoku"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/back_to_menu"
+                android:strokeColor="@color/dark_gray"
+                android:textColor="@color/dark_gray" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

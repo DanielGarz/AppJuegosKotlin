@@ -4,19 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:padding="16dp"
     tools:context=".TicTacToeActivity">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tictactoe_title"
+        style="@style/TextAppearance.App.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="X: 0 | O: 0 | Empates: 0"
+        style="@style/TextAppearance.App.Body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <TextView
         android:id="@+id/textViewStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
-        android:text="Player X's turn"
+        android:text="Turno del jugador X"
         android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="@color/primary_red"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/gridLayoutTicTacToe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewScore" />
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayoutTicTacToe"
@@ -70,15 +97,59 @@
 
     </androidx.gridlayout.widget.GridLayout>
 
-    <Button
-        android:id="@+id/buttonReset"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Reset Game"
-        android:onClick="resetGame"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/gridLayoutTicTacToe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Primera fila con los botones principales -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/buttonReset"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/new_game"
+                android:backgroundTint="@color/primary_red" />
+
+            <Button
+                android:id="@+id/buttonResetStats"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/reset_stats"
+                android:strokeColor="@color/primary_red"
+                android:textColor="@color/primary_red" />
+
+        </LinearLayout>
+
+        <!-- Segunda fila con el botón de volver -->
+        <Button
+            android:id="@+id/buttonBackToMenu"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_menu"
+            android:strokeColor="@color/dark_gray"
+            android:textColor="@color/dark_gray" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

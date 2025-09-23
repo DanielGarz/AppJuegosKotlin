@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- First card (face down) -->
+    <group>
+        <path
+            android:pathData="M8,6 L28,6 Q30,6 30,8 L30,28 Q30,30 28,30 L8,30 Q6,30 6,28 L6,8 Q6,6 8,6 Z"
+            android:fillColor="#D91B24"
+            android:strokeColor="#761F21"
+            android:strokeWidth="1" />
+
+        <!-- Question mark pattern -->
+        <path
+            android:pathData="M18,12 Q18,10 20,10 Q22,10 22,12 Q22,14 20,14 L20,16 M20,18 L20,20"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:fillColor="#00000000" />
+    </group>
+
+    <!-- Second card (face up) -->
+    <group>
+        <path
+            android:pathData="M20,18 L40,18 Q42,18 42,20 L42,40 Q42,42 40,42 L20,42 Q18,42 18,40 L18,20 Q18,18 20,18 Z"
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#761F21"
+            android:strokeWidth="1" />
+
+        <!-- Heart symbol -->
+        <group>
+            <path
+                android:pathData="M30,25 Q28,23 26,25 Q26,27 30,31 Q34,27 34,25 Q32,23 30,25 Z"
+                android:fillColor="#D91B24" />
+        </group>
+    </group>
+
+    <!-- Sparkle effects -->
+    <group>
+        <path
+            android:pathData="M12,20 L13,22 L12,24 L11,22 Z M10,22 L12,22"
+            android:strokeColor="#504141"
+            android:strokeWidth="1"
+            android:fillColor="#504141" />
+        <path
+            android:pathData="M36,12 L37,14 L36,16 L35,14 Z M34,14 L36,14"
+            android:strokeColor="#504141"
+            android:strokeWidth="1"
+            android:fillColor="#504141" />
+    </group>
+</vector>
