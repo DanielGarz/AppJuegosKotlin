@@ -1,4 +1,4 @@
-# 🎮 Centro de Juegos - Game Hub
+# 🎮 Centro de Juegos - FordGame
 
 **Proyecto Final - Desarrollo de Aplicaciones Móviles**
 
